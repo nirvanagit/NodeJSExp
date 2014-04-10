@@ -1,0 +1,20 @@
+var async = require('async'),
+request = require('request');
+var collection = [1, 2, 3, 4, 5];
+function done(result) {
+console.log('The first element on %j whose square value '+
+'is greater than 10: %j', collection, result);
+}
+
+function test(value){
+	return value > 10;
+	}
+
+function detect(item, callback) {
+var square = item*item;
+//console.log(item*item);
+callback(test(square));
+//return item > 10;
+}
+async.detect(collection, detect, done);
+

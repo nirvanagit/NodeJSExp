@@ -1,0 +1,22 @@
+<html>
+	<head>
+		<script src = 'http://localhost:3000/socket.io/socket.io.js'></script>
+		<script>
+		var socket = io.connect('http://localhost:3000');
+		</script>
+
+		<!-- The below script can be anywhere. in head or body -->
+		<script>
+		socket.on('time', function(data){
+			document.getElementById('data').innerHTML = data;
+			});
+		</script>
+	</head>
+
+	<body>
+
+		
+		<p>Realtime time demo using socket.io</p>
+		<div id = 'data'></div>
+	</body>
+</html>
