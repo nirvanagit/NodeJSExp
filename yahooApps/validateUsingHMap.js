@@ -43,6 +43,9 @@ function check2(){
   });
 }
 
+//Although they are called in parallel. But there is a mixum here. I have 8 key value pairs in my hashmap. But the hashmap
+//is traversed ten times. (2 more than the actual). For this I need to use synchronous function so that any record does 
+//not overlap.
 
 async.parallel([
   check1(),
@@ -60,6 +63,9 @@ function checkIfValid(value, key){
         console.log('This is a valid Logo', key);
         map.set(key, 1);
       } 
+      else{
+        console.log('This is not a valid Logo', key);
+      }
     }   
     });
   
