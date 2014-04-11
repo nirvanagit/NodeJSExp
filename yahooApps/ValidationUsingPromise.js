@@ -5,7 +5,7 @@ var FS = require('fs'),
 function getResults(pathToFile) {   
     return Q.nfcall(FS.readFile, pathToFile, "utf-8")
     .then(function(data) {
-	for(var i = 0; i < 3; i++){
+	for(var i = 0; i < FileLength; i++){
 	if(data.values[i].complies == ''){
 
 	var options = data.values[i].url;	
