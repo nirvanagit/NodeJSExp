@@ -1,3 +1,6 @@
+//This is not a fully implemented function for checking logo dimensions of thousands of urls. This is Psuedo code which 
+//can be used to do a check on the image size. 
+//For this implementation I have used q library for utilizing promises in node.js
 var FS = require('fs'),
     Q = require('q'),
     request = require('request');
